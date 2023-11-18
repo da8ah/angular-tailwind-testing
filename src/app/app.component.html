@@ -7,25 +7,4 @@
 <!-- * * * * * * * to get started with your project! * * * * * * * * -->
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
 
-<mat-toolbar color="primary">
-  <button type="button" mat-icon-button class="example-icon">
-    <mat-icon class="mat-18" (click)="this.sideNav.open()" *ngIf="!sideNav.opened">menu</mat-icon>
-    <mat-icon class="mat-18" (click)="this.sideNav.close()" *ngIf="sideNav.opened">close</mat-icon>
-  </button>
-  <span>angular-tailwind-testing</span>
-</mat-toolbar>
-
-<mat-sidenav-container>
-  <mat-sidenav #sideNav="matSidenav" [fixedInViewport]="true">
-    <!-- <img src="" alt="" class="avatar mat-elevation-z8"> -->
-    <h4>Let's Program</h4>
-    <mat-divider></mat-divider>
-    <button type="button" mat-button class="menu-button">
-      <!-- <mat-icon>event_note</mat-icon> -->
-      <span>ABC NEWS</span>
-    </button>
-  </mat-sidenav>
-  <mat-sidenav-content>
-    <span>Hola Mundo</span>
-  </mat-sidenav-content>
-</mat-sidenav-container>
+<app-nav></app-nav>
