@@ -8,7 +8,7 @@ import { MatSidenav } from '@angular/material/sidenav';
   styleUrls: ['./nav.component.scss']
 })
 export class NavComponent implements AfterViewInit {
-  title = 'angular-tailwind-testing';
+  title = 'Rick and Morty API';
   @Input() selected = 0
   @Input() titles: any = []
   @Output() selector = new EventEmitter<number>()

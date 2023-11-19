@@ -4,7 +4,7 @@
             <mat-icon class="mat-18" (click)="this.sideNav.open()" *ngIf="!sideNav.opened">menu</mat-icon>
             <mat-icon class="mat-18" (click)="this.sideNav.close()" *ngIf="sideNav.opened">close</mat-icon>
         </button>
-        <span>angular-tailwind-testing</span>
+        <span class="pl-5">{{title}}</span>
     </mat-toolbar>
 
     <mat-sidenav-container>

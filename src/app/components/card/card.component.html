@@ -1,1 +1,13 @@
-<p>card works!</p>
+<div class="bg-white p-6 rounded-lg">
+    <img class="lg:h-60 xl:h-56 md:h-64 sm:h-72 xs:h-72 h-72  rounded w-full object-cover object-center mb-6"
+        src="https://rickandmortyapi.com/api/character/avatar/{{selected + 1}}.jpeg" alt="{{episode.name}}">
+    <div class="flex justify-between">
+        <h3 style="display: -webkit-box;" class="text-ellipsis tracking-widest text-gray-800 text-sm">
+            {{episode.air_date}}</h3>
+    </div>
+    <h2 class="w-[90%] text-lg text-gray-900 font-medium title-font mb-4 overflow-hidden truncate">
+        {{index + 1}}. {{episode.name}}
+    </h2>
+    <span><a class="text-blue-500" href="{{episode.url}}" target="_blank">read
+            more....</a></span>
+</div>

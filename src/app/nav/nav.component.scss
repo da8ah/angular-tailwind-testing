@@ -9,3 +9,7 @@ mat-toolbar {
 mat-sidenav-container {
     height: 90vh;
 }
+
+mat-sidenav-content {
+    overflow-x: hidden;
+}
