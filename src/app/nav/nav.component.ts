@@ -20,8 +20,8 @@ export class NavComponent implements OnInit, AfterViewInit {
   ngOnInit(): void {
     this.service.getRickAndMortyEpisodes()
       .subscribe(data => {
-        this.episodes = data
         this.titles = [...Array(data.length).keys()].map(i => `S0${i + 1}`)
+        this.episodes = data;
       })
   }
 
