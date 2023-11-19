@@ -1,3 +1,11 @@
-mat-sidenav-content {
-    height: 100vh;
+.container {
+    max-height: 100vh;
+}
+
+mat-toolbar {
+    height: 10vh;
+}
+
+mat-sidenav-container {
+    height: 90vh;
 }

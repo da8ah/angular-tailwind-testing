@@ -1,35 +1,38 @@
-<mat-toolbar color="primary">
-    <button type="button" mat-icon-button class="example-icon">
-        <mat-icon class="mat-18" (click)="this.sideNav.open()" *ngIf="!sideNav.opened">menu</mat-icon>
-        <mat-icon class="mat-18" (click)="this.sideNav.close()" *ngIf="sideNav.opened">close</mat-icon>
-    </button>
-    <span>angular-tailwind-testing</span>
-</mat-toolbar>
-
-<mat-sidenav-container>
-    <mat-sidenav #sideNav="matSidenav">
-        <img class="avatar w-[200px] h-[200px] mb-[5px]" src="https://rickandmortyapi.com/api/character/avatar/1.jpeg"
-            alt="banner">
-        <h4>Let's Watch!</h4>
-        <mat-divider></mat-divider>
-
-        <ng-container *ngFor="let title of titles" class="w-full h-full py-10">
-            <button mat-button
-                class="menu-button w-full flex justify-start items-center py-2 px-5 hover:bg-black hover:opacity-70">
-                <mat-icon class="mr-[5px]">movie</mat-icon>
-                <span>{{title}}</span>
-            </button>
-        </ng-container>
-
-
-        <mat-divider></mat-divider>
-        <button mat-button
-            class="menu-button  w-full flex justify-start items-center py-2 hover:bg-black hover:opacity-70">
-            <mat-icon class="mr-[5px]">settings</mat-icon>
-            <span>Settings</span>
+<ng-container class="container">
+    <mat-toolbar color="primary">
+        <button type="button" mat-icon-button class="example-icon">
+            <mat-icon class="mat-18" (click)="this.sideNav.open()" *ngIf="!sideNav.opened">menu</mat-icon>
+            <mat-icon class="mat-18" (click)="this.sideNav.close()" *ngIf="sideNav.opened">close</mat-icon>
         </button>
-    </mat-sidenav>
-    <mat-sidenav-content>
-        <ng-content></ng-content>
-    </mat-sidenav-content>
-</mat-sidenav-container>
+        <span>angular-tailwind-testing</span>
+    </mat-toolbar>
+
+    <mat-sidenav-container>
+        <mat-sidenav #sideNav="matSidenav">
+            <img class="avatar w-[200px] h-[200px] mb-[5px]"
+                src="https://rickandmortyapi.com/api/character/avatar/1.jpeg" alt="banner">
+            <h4>Let's Watch!</h4>
+            <mat-divider></mat-divider>
+
+            <ng-container *ngFor="let title of titles; index as i" class="w-full h-full py-10">
+                <button mat-button
+                    class="menu-button w-full flex justify-start items-center py-2 px-5 hover:bg-black hover:opacity-70 {{selected === i && 'bg-black opacity-70'}}"
+                    (click)="onSelection(i)">
+                    <mat-icon class="mr-[5px]">movie</mat-icon>
+                    <span>{{title}}</span>
+                </button>
+            </ng-container>
+
+
+            <mat-divider></mat-divider>
+            <button mat-button
+                class="menu-button  w-full flex justify-start items-center py-2 hover:bg-black hover:opacity-70">
+                <mat-icon class="mr-[5px]">settings</mat-icon>
+                <span>Settings</span>
+            </button>
+        </mat-sidenav>
+        <mat-sidenav-content>
+            <ng-content></ng-content>
+        </mat-sidenav-content>
+    </mat-sidenav-container>
+</ng-container>
