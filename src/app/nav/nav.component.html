@@ -8,16 +8,25 @@
 
 <mat-sidenav-container>
     <mat-sidenav #sideNav="matSidenav">
-        <!-- <img src="" alt="" class="avatar mat-elevation-z8"> -->
-        <h4>Let's Program</h4>
+        <img class="avatar mat-elavation-z8" src="https://rickandmortyapi.com/api/character/avatar/1.jpeg" alt="banner">
+        <h4>Let's Watch</h4>
         <mat-divider></mat-divider>
-        <button type="button" mat-button class="menu-button">
-            <mat-icon>event_note</mat-icon>
-            <span>ABC NEWS</span>
+
+        <ng-container *ngFor="let title of titles">
+            <button mat-button class="menu-button">
+                <mat-icon>movie</mat-icon>
+                <span>{{title}}</span>
+            </button><br />
+        </ng-container>
+
+
+        <mat-divider></mat-divider>
+        <button mat-button class="menu-button">
+            <mat-icon>settings</mat-icon>
+            <span>Settings</span>
         </button>
     </mat-sidenav>
     <mat-sidenav-content>
         <span>Hola Mundo</span>
-        <router-outlet></router-outlet>
     </mat-sidenav-content>
 </mat-sidenav-container>
